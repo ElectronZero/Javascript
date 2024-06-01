@@ -1,4 +1,4 @@
-let score = "hitesh"
+let score = "Ayushman"
 
 console.log(typeof score);
 console.log(typeof(score));
@@ -41,7 +41,7 @@ console.log(2/3);
 console.log(2%3);
 
 let str1 = "hello"
-let str2 = " hitesh"
+let str2 = " ayushman"
 
 let str3 = str1 + str2
 console.log(str3);
@@ -51,8 +51,8 @@ console.log(1 + "2");
 console.log("1" + 2 + 2);
 console.log(1 + 2 + "2");
 
-console.log( (3 + 4) * 5 % 3);
-
+console.log( (3 + 4) * 5 % 3);   //not recommended to write in this way
+ 
 console.log(+true);
 console.log(+"");
 
