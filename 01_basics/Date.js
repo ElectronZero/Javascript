@@ -21,7 +21,7 @@ console.log(myCreatedDate2.toLocaleString());
 console.log(myCreatedDate3.toLocaleString());
 console.log(myCreatedDate4.toLocaleString());
 
-let myTimeStamp = Date.now()  //always in miliseconds calculated from 1970 till now
+let myTimeStamp = Date.now()  //always in miliseconds calculated from Jan 1,1970 till now
 
 console.log(myTimeStamp);
 console.log(myCreatedDate.getTime());
