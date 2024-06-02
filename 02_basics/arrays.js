@@ -83,8 +83,8 @@ const real_another_array = another_array.flat(Infinity) //[1, 2, 3, 4, 5, 6, 7, 
 console.log(real_another_array)
 
 
-console.log(Array.isArray("Ayush")) //returns boolean if the passed parameter is an array
-console.log(Array.from("Ayush")) //converts the passed parameter into an array
+console.log(Array.isArray("Ayush")) //returns boolean if the passed value is an array
+console.log(Array.from("Ayush")) //converts the passed value into an array
 
 console.log(Array.from({name: "Ayush"})) // can also convert objects into array according to the keys or values(shall be disscussed ahead)
 
