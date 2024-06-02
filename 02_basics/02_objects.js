@@ -60,7 +60,7 @@ console.log(Object.keys(tinderUser)); //will store all the objects keys in an ar
 console.log(Object.values(tinderUser)); //will store all the objects values in an array
 
 console.log(Object.entries(tinderUser)); 
-//will store the keys and values in an array of arrays    where the 1st value are keys and the 2nd values are values [ [ 'id', '123abc' ], [ 'name', 'Sammy' ], [ 'isLoggedIn', false ] ]
+//will store the keys and values in an array of arrays where the 1st value are keys and the 2nd values are values [ [ 'id', '123abc' ], [ 'name', 'Sammy' ], [ 'isLoggedIn', false ] ]
 
 console.log(tinderUser.hasOwnProperty('isLoggedIn')); //to check that the given property is       available or not
 
