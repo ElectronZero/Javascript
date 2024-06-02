@@ -15,7 +15,7 @@ const hundreds = 1000000
 console.log(hundreds.toLocaleString()); //default (us format 1,000,000)
 console.log(hundreds.toLocaleString('en-IN')); //number representation in indian format (10,00,000)
 
-// +++++++++++++++++++++++++++++++ Maths ++++++++++++++++++++++++++++++++++++++++++++++
+// +++++++++++++++++++++++++++++++ Maths+++++++++++++++++++++++++++++++++++++++
 
 console.log(Math);
 console.log(Math.abs(-4));

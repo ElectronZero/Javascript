@@ -3,6 +3,7 @@ const repoCount = 50
 
 // console.log(name + repoCount + " Value");
 
+//String Interpolation
 console.log(`My name is ${name} and my repository count is ${repoCount}`); 
 
 const gameName = new String('snake-and-ladder') //another way of declaring Strings

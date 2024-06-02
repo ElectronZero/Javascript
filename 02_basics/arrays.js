@@ -68,7 +68,7 @@ console.log(marvel_heros[3][1]); //flash
 const allHeros = marvel_heros.concat(dc_heros) //merges the 2 arrays (works for only merging 2 arrays)
 console.log(allHeros); //[ 'thor', 'Ironman', 'spiderman', 'superman', 'flash', 'batman' ]
 
-//Instead use spread(...) for mearging (can handle any no. of arrays)
+//Instead use spread(...) for merging (can handle any no. of arrays)
 
 const all_new_heros = [...marvel_heros, ...dc_heros] 
 console.log(all_new_heros); //[ 'thor', 'Ironman', 'spiderman', 'superman', 'flash', 'batman' ]
@@ -86,7 +86,7 @@ console.log(real_another_array)
 console.log(Array.isArray("Ayush")) //returns boolean if the passed parameter is an array
 console.log(Array.from("Ayush")) //converts the passed parameter into an array
 
-console.log(Array.from({name: "Ayush"})) // can also convert objects into array(shall be disscussed ahead)
+console.log(Array.from({name: "Ayush"})) // can also convert objects into array according to the keys or values(shall be disscussed ahead)
 
 let score1 = 100
 let score2 = 200
