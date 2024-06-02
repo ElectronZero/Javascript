@@ -12,10 +12,10 @@ const otherNumber = 123.8966
 // console.log(otherNumber.toPrecision(4));
 
 const hundreds = 1000000
-console.log(hundreds.toLocaleString()); //default (us format)
-console.log(hundreds.toLocaleString('en-IN')); //to represent the number in indian format (10,00,000)
+console.log(hundreds.toLocaleString()); //default (us format 1,000,000)
+console.log(hundreds.toLocaleString('en-IN')); //number representation in indian format (10,00,000)
 
-// +++++++++++++ Maths +++++++++++++++++++++++++++++
+// +++++++++++++++++++++++++++++++ Maths ++++++++++++++++++++++++++++++++++++++++++++++
 
 console.log(Math);
 console.log(Math.abs(-4));
