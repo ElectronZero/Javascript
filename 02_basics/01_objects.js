@@ -38,7 +38,7 @@ JsUser.greeting = function(){
 
 JsUser.greetingTwo = function(){
     console.log(`Hello JS user, ${this.name}`);  //to reference a key in an object (should use '`')
-                                                 //must use 'this' to reference the same object
+                                                 //must use 'this' as it refers the current context of the object
 }
 
 console.log(JsUser.greeting); //only a function reference is returned
