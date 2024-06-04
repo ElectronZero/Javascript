@@ -11,3 +11,5 @@
 ( (name) => {
     console.log(`DB CONNECTED TWO ${name}`);
 } )('ayushman');
+
+//-->ayushman is passed directly into the function and is executed as it is invoked immediately in IIFE
