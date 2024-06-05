@@ -10,7 +10,7 @@
     
 </body>
 <script>
-    const div = document.createElement('div')
+    const div = document.createElement('div') //creting a div element
     console.log(div);
     div.className = "main"
     div.id = Math.round(Math.random() * 10 + 1)
@@ -20,7 +20,7 @@
     div.innerText = "Chai aur code"
     /*
     const addText = document.createTextNode("Chai aur code") 
-    div.appendChild(addText)
+    div.appendChild(addText) //this method does not traverse the whole tree i.e. an optimized way
     */
     document.body.appendChild(div) //for reflecting the script to html body
 </script>
