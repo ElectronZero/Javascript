@@ -21,7 +21,8 @@ while(true){
         continue;
     } 
 
-    console.log(`Computer move: ${char}`)
+    if(userInp != 0)
+        console.log(`Computer move: ${char}`)
     
     if(userInp == 0){
         break;
