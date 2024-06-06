@@ -176,3 +176,39 @@ function NewGame(){
 }
 
 ```
+
+## Project-5
+
+```javascript
+const randomColor = function (){
+  const range = "0123456789ABCDEF"
+  let color = "#"
+  for(let i = 0; i < 6; i++){
+    color += range[Math.floor(Math.random() * 16)]
+  }
+  return color  
+}
+
+randomColor()
+
+let StartId
+const startChangingColor = function (){
+
+  if(!StartId){
+    StartId = setInterval(changeBgColor, 1000)
+  }
+  
+  function changeBgColor(){
+    document.querySelector("body").style.backgroundColor = randomColor()
+  }
+}
+
+const stopChangingColor = function (){
+  clearInterval(StartId)
+  StartId = null
+}
+
+document.querySelector("#start").addEventListener("click",startChangingColor)
+
+document.querySelector("#stop").addEventListener("click",stopChangingColor)
+```
