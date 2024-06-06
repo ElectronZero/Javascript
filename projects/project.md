@@ -33,6 +33,38 @@ buttons.forEach(function(val){
 ## Project-2
 
 ```javascript
+const forms = document.querySelector("form")
+const result = document.querySelector("#results")
+
+forms.addEventListener("submit", function(e){
+  e.preventDefault()
+  const height = parseInt(document.querySelector("#height").value)
+  const weight = parseInt(document.querySelector("#weight").value)
+
+  if(height <= 0 || isNaN(height) || height === ""){
+    result.innerHTML = `ENTER A VALID INPUT`
+  }
+  if(weight <= 0 || isNaN(weight) || weight === ""){
+    result.innerHTML = `ENTER A VALID INPUT`
+  }
+  else{
+    const bmi = (weight/((height/100)**2)).toFixed(2)
+    BMIstats(bmi)
+  }
+  
+})
+
+function BMIstats(bmi){
+  if(bmi <= 18.6){
+    result.innerHTML = `BMI: ${bmi} (UNDERWEIGHT)`
+  }
+  else if(bmi > 18.6 && bmi <= 24.9){
+    result.innerHTML = `BMI: ${bmi} (NORMAL)`
+  }
+  else{
+    result.innerHTML = `BMI: ${bmi} (OVERWEIGHT)`
+  }
+}
 
 ```
 
