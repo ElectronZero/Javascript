@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="card">
+        <img src="https://via.placeholder.com/400x200" alt="Card Image">
+        <div class="card-content">
+            <h2 class="card-title">Card Title</h2>
+            <p class="card-text">This is a sample text for the card description. It's a brief summary of the card content.</p>
+            <a href="#" class="card-button">Read More</a>
+        </div>
+    </div>
+
+<!--
+VALUE  STATE                DESCRIPTION   
+
+0	   UNSENT	            Client has been created.open() not called yet.
+1	   OPENED	            open() has been called.
+2	   HEADERS_RECEIVED     send() has been called, and headers and status are 
+                            available.
+3	   LOADING	            Downloading; responseText holds partial data.
+4	   DONE	                The operation is complete. 
+-->
+
+<!-- <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState">XMLHttpRequest-ReadyState</a> -->
+</body>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f5f5f5;
+        font-family: Arial, sans-serif;
+    }
+
+    .card {
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        margin: 20px;
+        padding: 20px;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+    }
+
+    .card img {
+        max-width: 100%;
+        border-radius: 8px 8px 0 0;
+    }
+
+    .card-content {
+        padding: 20px;
+    }
+
+    .card-title {
+        font-size: 24px;
+        margin: 0 0 10px;
+        color: #333;
+    }
+
+    .card-text {
+        font-size: 16px;
+        color: #666;
+        margin: 0;
+    }
+
+    .card-button {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        background-color: #007BFF;
+        color: #fff;
+        text-decoration: none;
+        transition: background-color 0.3s;
+    }
+
+    .card-button:hover {
+        background-color: #0056b3;
+    }
+</style>
+<script>
+    const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl) //using 'GET' method to get thye requested url
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if (xhr.readyState === 4) {
+            const data = JSON.parse(this.responseText) //to convert the response text into object from string
+            console.log(typeof data); //object (previously string)
+            console.log(data.followers);
+        }
+    }
+    xhr.send(); //should be called as open() does call by itself
+
+
+    //Small Project regrading API request
+    const getUrl = 'https://api.github.com/users/hiteshchoudhary'
+    const button = document.querySelector(".card-button")
+
+
+    button.addEventListener("click", function(e){
+        const xmlhr = new XMLHttpRequest()
+        xmlhr.open("GET", getUrl)
+        xmlhr.onreadystatechange = function(){
+            if(xmlhr.readyState === 4){
+                const data = JSON.parse(this.responseText)
+                document.querySelector("img").src = `${data.avatar_url}`
+                document.querySelector(".card-title").innerHTML = `Hitesh Choudary`
+                document.querySelector(".card-text").innerHTML = `Followers: ${data.followers}`
+                button.remove()
+            }
+        }
+        xmlhr.send()
+    })
+
+</script>
+</html>
