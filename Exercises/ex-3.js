@@ -63,7 +63,7 @@ function faultyCalculator(firstNum, secondNum, operation){
         console.log(firstNum ** secondNum);
     }
     else if(operation === "**" || operation === "^"){
-        console.log(firstNum ** secondNum);
+        console.log(firstNum * secondNum);
     }
 }
 
