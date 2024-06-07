@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hacker's Terminal</title>
+    <style>
+      .heading1,
+      .heading2,
+      .heading3,
+      .heading4,
+      .heading5 {
+        color: #20c20e;
+        font-family: monospace;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body style="background-color: rgb(0, 0, 0)">
+    <!-- Create a hacking simulator which has green background and it shows these messages with random delay of 1 to 7 seconds 
+    
+    Initializing Hacking...
+    Reading your Files...
+    Password files Detected...
+    Sending all passwords and personal files to server...
+    Cleaning up...
+
+    The three dots must blink so that it looks like a real terminal
+    -->
+    <h3 class="heading1"></h3>
+    <h3 class="heading2"></h3>
+    <h3 class="heading3"></h3>
+    <h3 class="heading4"></h3>
+    <h3 class="heading5"></h3>
+  </body>
+  <script>
+
+    // function hacker1() {
+    //   let data = msg1.slice(0, index1);
+    //   message1.innerText = data;
+    //   index1++;
+    //     setTimeout(hacker1, 50);
+    // }
+    
+
+    let messages = [
+      {
+        text: "Initializing Hacking",
+        element: document.querySelector(".heading1"),
+      },
+      {
+        text: "Reading Your files",
+        element: document.querySelector(".heading2"),
+      },
+      {
+        text: "Password files Detected",
+        element: document.querySelector(".heading3"),
+      },
+      {
+        text: "Sending all passwords and personal files to server",
+        element: document.querySelector(".heading4"),
+      },
+      { text: "Cleaning up", element: document.querySelector(".heading5") },
+    ];
+
+    const randomDelay = () => {
+      return new Promise((resolve, reject) => {
+        let timeout = Math.random() * 6 + 1;
+        setTimeout(resolve, timeout * 1000);
+      });
+    };
+
+    async function typeWriter(msg) {
+      let index = 1;
+      while (index <= msg.text.length) {
+        msg.element.innerText = msg.text.slice(0, index) + "...".substring(0, (index % 4));
+        index++;
+        await new Promise((resolve) => setTimeout(resolve, 50));
+      }
+    }
+
+    async function main() {
+      for (let msg of messages) {
+        await randomDelay();
+        await typeWriter(msg);
+      }
+    }
+    main();
+  </script>
+</html>
