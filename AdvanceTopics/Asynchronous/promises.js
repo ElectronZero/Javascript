@@ -144,7 +144,7 @@ let prom2 = new Promise((resolve, reject) => {
     }
 })
 
- 
+//Waits for all promises to resolve and returns the array of their results. If any one fails, it becomes the error & all the other results are ignored
 let p3 = Promise.all([prom1, prom2])
 p3.then((a)=>{
     console.log(a)
@@ -152,13 +152,15 @@ p3.then((a)=>{
     console.log(err)
 })
 
-let p4 = Promise.race([prom1, prom2])
-p3.then((a)=>{
+// Waits for all the promises to settle and returns their results as an array of objects with status and value
+let p4 = Promise.allSettled([prom1, prom2])
+p3.then((a)=>{ 
     console.log(a)
 }).catch(err=>{
     console.log(err)
 })
 
+//Waits for the first promise to settle and its result/error becomes the outcome
 let p5 = Promise.race([prom1, prom2])
 p3.then((a)=>{
     console.log(a)
@@ -166,7 +168,8 @@ p3.then((a)=>{
     console.log(err)
 })
 
-let p6 = Promise.race([prom1, prom2])
+//Waits for the first promise to fulfill(& not rejected), and its result becomes the outcome. Throws AggregateError if all the promises are rejected
+let p6 = Promise.any([prom1, prom2])
 p3.then((a)=>{
     console.log(a)
 }).catch(err=>{
