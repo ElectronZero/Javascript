@@ -1,3 +1,4 @@
+/*
 const promiseOne = new Promise(function(resolve, reject){
     //Do an async task
     // DB calls, cryptography, network
@@ -110,3 +111,64 @@ const promise3 = new Promise((resolve, reject) => {
 Promise.all([promise1, promise2, promise3]).then((values) => {
   console.log(values);
 });
+*/
+
+console.log('This is Promises');
+
+//resolve--> If the job is finished successfully
+//reject--> If the job fails
+
+let prom1 = new Promise((resolve, reject) => {
+    let a = Math.random();
+    if (a < 0.5) {
+        reject("No random number was not supporting you")
+    }
+    else {
+        setTimeout(() => {
+            console.log("Yes I am done")
+            resolve("Harry")
+        }, 3000);
+    }
+})
+
+let prom2 = new Promise((resolve, reject) => {
+    let a = Math.random();
+    if (a < 0.5) {
+        reject("No random number was not supporting you 2")
+    }
+    else {
+        setTimeout(() => {
+            console.log("Yes I am done 2")
+            resolve("Harry 2")
+        }, 1000);
+    }
+})
+
+ 
+let p3 = Promise.all([prom1, prom2])
+p3.then((a)=>{
+    console.log(a)
+}).catch(err=>{
+    console.log(err)
+})
+
+let p4 = Promise.race([prom1, prom2])
+p3.then((a)=>{
+    console.log(a)
+}).catch(err=>{
+    console.log(err)
+})
+
+let p5 = Promise.race([prom1, prom2])
+p3.then((a)=>{
+    console.log(a)
+}).catch(err=>{
+    console.log(err)
+})
+
+let p6 = Promise.race([prom1, prom2])
+p3.then((a)=>{
+    console.log(a)
+}).catch(err=>{
+    console.log(err)
+})
